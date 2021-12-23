@@ -10,6 +10,7 @@ class Ball(Turtle):
         self.shape('circle')
         self.x = 10
         self.y = 10
+        
 
     def move_ball(self):
         self.goto(self.xcor()+self.x, self.ycor()+self.y)

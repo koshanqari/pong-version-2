@@ -1,13 +1,21 @@
 from turtle import Screen, Turtle
-from typing import Sequence
+import turtle
 from paddle import Paddle
 from ball import Ball
 from time import sleep
+from score import Score
 #setting up screen
 screen = Screen()
 screen.bgcolor("Black")
 screen.setup(width=800, height=600)
 screen.title("KQari's Pong")
+
+#/msking the line in the middle
+line = Turtle()
+line.hideturtle()
+line.color("white")
+line.goto(0,300)
+line.goto(0,-300)
 
 
 #setting up paddles
@@ -17,7 +25,8 @@ paddle_r = Paddle((350,0))
 
 #setting up ball
 ball = Ball()
-
+#setting up Score 
+score = Score()
 
 #making paddle movable
 screen.listen()
@@ -45,12 +54,16 @@ while start == True :
     
     if ball.xcor() > 400:
         print("left guy scored")
+        score.update_l()
+        score.refresh()
         ball.goto(0,0)
         ball.bounce_x()
         sleep_time = 0.03
 
     if ball.xcor() < -400:
         print("right guy scored")
+        score.update_r()
+        score.refresh()
         ball.goto(0,0)
         ball.bounce_x()
         sleep_time = 0.03
