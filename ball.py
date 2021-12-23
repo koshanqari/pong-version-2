@@ -17,3 +17,9 @@ class Ball(Turtle):
 
     def bounce_y(self):
         self.y *= -1
+
+    def bounce_x(self):
+        self.x *= -1
+    
+
+

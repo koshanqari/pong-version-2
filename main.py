@@ -39,6 +39,12 @@ while start == True :
 
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
+    
+
+    
+
+    if ball.distance(paddle_r.position()) < 50 and ball.xcor() >320 or ball.distance(paddle_l.position()) < 50 and ball.xcor() < -320:
+        ball.bounce_x()
 
 
 
