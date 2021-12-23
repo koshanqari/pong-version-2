@@ -1,7 +1,8 @@
 from turtle import Screen, Turtle
 from typing import Sequence
 from paddle import Paddle
-
+from ball import Ball
+from time import sleep
 #setting up screen
 screen = Screen()
 screen.bgcolor("Black")
@@ -14,6 +15,8 @@ screen.tracer(0)
 paddle_l = Paddle((-350,0))
 paddle_r = Paddle((350,0))
 
+#setting up ball
+ball = Ball()
 
 
 #making paddle movable
@@ -30,7 +33,9 @@ screen.onkey(paddle_l.move_down, "s")
 
 start = True
 while start == True :
+    sleep(0.1)
     screen.update()
+    ball.move_ball()
    
 
 

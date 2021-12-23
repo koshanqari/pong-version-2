@@ -8,6 +8,7 @@ class Paddle(Turtle):
         self.penup()
         self.goto(position)
         self.shape("square")
+        
 
     def move_up(self):
         self.goto(self.xcor(), self.ycor()+20)
