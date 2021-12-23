@@ -40,7 +40,7 @@ while start == True :
         ball.bounce_x()
         if sleep_time > 0.002:
             sleep_time -= 0.002  
-        print(sleep_time)
+        print(f"ball speed delay: {sleep_time}")
 
     
     if ball.xcor() > 400:
